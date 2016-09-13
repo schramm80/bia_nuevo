@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#homepage'
 
+  match '/contact' => 'welcome#homepage', :via => :get
+  match '/contact' => 'welcome#submit', :via => :post
+
   resources "contacts", only: [:new, :create]
 
-  
+
 
 
   # Example of regular route:
